@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Organizador de Eventos Profesional | Manual PDF</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #c5a059; /* Dorado elegante */
+            --secondary-dark: #a3813e;
+            --light: #fdfbf7;
+            --accent: #2c3e50;
+            --gray: #666;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Top Bar Promocional */
+        .top-bar {
+            background-color: var(--primary);
+            color: var(--secondary);
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-btn {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+        }
+
+        .nav-btn:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(44,62,80,0.9)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge-noviembre {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        .price-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 25px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .price-old {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            color: #aaa;
+        }
+
+        .price-new {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 5px 0;
+        }
+
+        .price-save {
+            font-size: 0.9rem;
+            color: #2ecc71;
+            font-weight: 600;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe57;
+            transform: translateY(-3px);
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: -50px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* About Author Section */
+        .author-section {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+
+        .author-img {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            height: 100%;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 5rem;
+        }
+
+        .author-info {
+            padding: 40px 40px 40px 0;
+        }
+
+        .author-info h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .author-info .subtitle {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        /* Syllabus Section */
+        .syllabus {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .accordion-item {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            overflow: hidden;
+            border: 1px solid #eaeaea;
+        }
+
+        .accordion-header {
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            background: var(--white);
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background: var(--light-gray);
+        }
+
+        .accordion-header i {
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .accordion-item.active .accordion-header i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 25px;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .accordion-body ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .accordion-body li {
+            margin-bottom: 8px;
+        }
+
+        /* Pricing Banner */
+        .pricing-banner {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+            margin: 80px 0;
+            position: relative;
+        }
+
+        .pricing-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pricing-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .pricing-content p {
+            margin-bottom: 30px;
+            color: #d1d1d1;
+        }
+
+        /* FAQ Section */
+        .faq {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .faq-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .faq-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .faq-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer span {
+            color: var(--secondary);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal Checkout */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
+        .modal-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.1);
+        }
+
+        .modal-content .btn-primary {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .author-section { grid-template-columns: 1fr; }
+            .author-info { padding: 30px; }
+            .author-img { min-height: 200px; }
+            .cta-buttons { flex-direction: column; }
+            .btn-primary, .btn-whatsapp { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        ⚡ OFERTA ESPECIAL DE NOVIEMBRE: 35% DE DESCUENTO EN TODO EL MES ⚡
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-graduation-cap" style="color: var(--secondary);"></i>
+                Eventos<span>Pro</span>
+            </a>
+            <a href="https://wa.me/5492975810638?text=Hola!%20Quiero%20comprar%20el%20Manual%20de%20Organización%20de%20Eventos%20con%20el%20descuento%20de%20noviembre." target="_blank" class="nav-btn">
+                <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge-noviembre"><i class="fa-solid fa-star"></i> Promoción Noviembre: 35% OFF</span>
+            <h1>Manual Oficial de <span>Organizador de Eventos Profesional</span></h1>
+            <p>Domina el negocio de los eventos sociales y corporativos, el gerenciamiento de catering, costos, planillas de timing, ceremonial, protocolo y la gestión integral de microemprendimientos.</p>
+            
+            <div class="price-box">
+                <div class="price-old">$50.000 ARS</div>
+                <div class="price-new">$32.500 ARS</div>
+                <div class="price-save">¡Ahorras un 35% todo el mes de noviembre!</div>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="openModal()">
+                    <i class="fa-solid fa-cart-shopping"></i> Comprar Manual PDF
+                </button>
+                <a href="https://wa.me/5492975810638?text=Hola!%20Tengo%20dudas%20sobre%20el%20Manual%20de%20Organización%20de%20Eventos." target="_blank" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>105 Páginas de Contenido</h3>
+                <p>Material completo, estructurado y listo para aplicar en eventos reales sin rodeos teóricos innecesarios.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-calculator"></i>
+                <h3>Costos y Cómputos</h3>
+                <p>Aprende a calcular gramajes exactos de comida, bebidas, hielo, vajilla y presupuestos profesionales.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <h3>Timings y Cronogramas</h3>
+                <p>Guías paso a paso de la "Hora 0", diagramas de Gantt y coordinación perfecta de la brigada de mozos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section class="author-section">
+        <div class="author-img">
+            <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <div class="author-info">
+            <h2>Profesora Silvia Liborsi</h2>
+            <span class="subtitle">Especialista en Gastronomía y Organización de Eventos</span>
+            <p>Con una trayectoria sólida en la formación de profesionales, la profesora Silvia Liborsi vuelca en este manual todo el conocimiento técnico, operativo y comercial indispensable para triunfar como microemprendedor o gestor de eventos de alto nivel.</p>
+            <p>Este material reúne años de experiencia práctica en catering, manejo de salones, ceremonial escrito y armado de brigadas.</p>
+        </div>
+    </section>
+
+    <!-- Syllabus Section -->
+    <section class="syllabus">
+        <div class="section-title">
+            <h2>Temario Completo del Manual</h2>
+            <p>Conoce en detalle las 8 unidades temáticas que aprenderás con este curso</p>
+        </div>
+
+        <div class="accordion">
+            <!-- Unidad 1 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Unidad 1: Introducción a la Organización de Eventos y Catering</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Reseña histórica de los banquetes y evolución hasta la era moderna.</li>
+                        <li>Principios de administración aplicados (Taylor y Fayol): división del trabajo y organigramas funcionales.</li>
+                        <li>Clasificación de eventos (sociales y corporativos) y tipologías de catering (transporte, comedores, concesiones).</li>
+                        <li>El mercado profesional y el perfil del Organizador Microemprendedor.</li>
+                        <li>Tareas repetitivas vs. no repetitivas y la importancia de la planificación.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Unidad 2 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Unidad 2: Relación con el Cliente, Target y Costeo</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Relevamiento inicial de necesidades y armado de presupuestos escalonados.</li>
+                        <li>Estructura de la Carpeta del Evento (los 14 documentos indispensables).</li>
+                        <li>Consideraciones estacionales, hora cero, protección jurídica y contratos de locación de servicios.</li>
+                        <li>Resolución de situaciones conflictivas (menú de niños, personal periférico, seguridad, políticos).</li>
+                        <li>Segmentación del target (socioeconómica, cultural, edad, género, religiones como Kosher).</li>
+                        <li>Estrategias de fijación de precios, criterio porcentual y ganancia fija por cubierto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Unidad 3 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Unidad 3: Tipos de Servicios Gastronómicos y Desayunos</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Comida formal: pasos, porcionamientos y límites de gramaje por comensal.</li>
+                        <li>Cocktails (corto, mediano y largo) y Comida al Tenedor (Americana).</li>
+                        <li>Servicios de Asado campestre (cálculo de carnes, achuras y ensaladas) y Buffet asistido.</li>
+                        <li>Desayunos de trabajo, coffee-breaks, continentales, americanos, brunch y high-tea.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Unidad 4 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Unidad 4: El Lugar del Evento, Ambientación y Montajes</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Relevamiento previo en escenarios campestres y urbanos (logística, accesos, alternativas por lluvia).</li>
+                        <li>Cálculo de capacidades y superficies (mesas con y sin plato de sitio, pistas de baile).</li>
+                        <li>Inspección técnica: fuegos, gas, frío, carga eléctrica, grupos electrógenos y baños.</li>
+                        <li>Estilos de ambientación (clásico, minimalista, vintage, campestre, shabby chic, industrial).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Unidad 5 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Unidad 5: Vajilla, Equipamiento y Sistemas de Cocina</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Armado de mesas estándar y con protocolo riguroso (cubertería, cristalería, menaje).</li>
+                        <li>Criterios para alquilar o comprar vajilla y mobiliario.</li>
+                        <li>Circuitos de producción: <em>Cook & Serve</em>, <em>Cook & Hold</em> y <em>Cook & Chill</em> (abatidores de temperatura).</li>
+                        <li>Sistemas de producción: tradicional, semitradicional, convenience food y cocina al vacío.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Unidad 6 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Unidad 6: Cómputo de Bebidas, Insumos y Servicios Colaterales</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Sistemas de contratación de bebidas (canilla libre, consignación, botella descorchada).</li>
+                        <li>Cómputos exactos por persona de vino, champán, cerveza, jugos y whisky.</li>
+                        <li>Manejo de hielo, física del enfriado rápido (descenso crioscópico).</li>
+                        <li>Control de recepción de materias primas y gestión de gastos generales y seguros (ART, Responsabilidad Civil).</li>
+                        <li>Coordinación de servicios colaterales (DJ, sonido, iluminación, fotografía, cotillón, SADAIC).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Unidad 7 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Unidad 7: Recursos Humanos y Servicio de Salón</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Cálculo de la brigada (mozos, maîtres, recepcionistas, guardarropas).</li>
+                        <li>Cronología del día del evento: llegada del personal, fajinado de vajilla y armado del salón.</li>
+                        <li>Modalidades de servicio: por plazas vs. por barrido (servicio combinado).</li>
+                        <li>Orden de precedencia protocolar y conducción permanente durante el evento ("los platos hablan").</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Unidad 8 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Unidad 8: Programación, Timings y Comunicación Protocolar</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Cronogramas simples, diagramas de Gantt y uso de Microsoft Project.</li>
+                        <li>Ejemplos prácticos de timing (fiestas de fin de año, cumpleaños de 15, teambuilding, bodas de día).</li>
+                        <li>Comunicación institucional y documentos administrativos según Decreto 333/85.</li>
+                        <li>Tarjetas de invitación (RSVP), criterios de presidencia y precedencia en mesas redondas e imperiales.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Banner -->
+    <section class="pricing-banner">
+        <div class="pricing-content">
+            <h2>Empieza hoy tu camino profesional en la organización de eventos</h2>
+            <p>Adquiere el manual completo en formato PDF con acceso inmediato. Aprovecha el 35% de descuento vigente durante todo noviembre.</p>
+            <div style="margin-bottom: 30px;">
+                <span style="font-size: 1.3rem; text-decoration: line-through; color: #888; margin-right: 15px;">$50.000 ARS</span>
+                <span style="font-size: 3rem; font-weight: 700; color: var(--secondary);">$32.500 ARS</span>
+            </div>
+            <button class="btn-primary" onclick="openModal()">
+                <i class="fa-solid fa-bolt"></i> ¡Comprar Ahora con Descuento!
+            </button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="section-title" style="margin-bottom: 30px;">
+            <h2>Preguntas Frecuentes</h2>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-card">
+                <h3>¿Cómo se entrega el manual?</h3>
+                <p>Una vez realizada la compra y confirmado el pago, se te envía el manual completo en formato PDF directamente a tu correo electrónico o WhatsApp para que puedas leerlo en cualquier dispositivo.</p>
+            </div>
+            <div class="faq-card">
+                <h3>¿Necesito experiencia previa?</h3>
+                <p>No. El manual está diseñado tanto para quienes recién comienzan desde cero como microemprendedores, como para trabajadores gastronómicos que desean perfeccionarse profesionalmente.</p>
+            </div>
+            <div class="faq-card">
+                <h3>¿Qué medios de pago aceptan?</h3>
+                <p>Puedes abonar de forma segura comunicándote directamente a través de nuestro botón de WhatsApp <strong>2975810638</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Curso de Organizador de Eventos Profesional. Todos los derechos reservados.</p>
+        <p>Diseñado para potenciar tu futuro profesional.</p>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5492975810638?text=Hola!%20Quiero%20comprar%20el%20Manual%20de%20Organización%20de%20Eventos." target="_blank" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal Checkout -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <h3>Adquirir Manual PDF</h3>
+            <p>Completa tus datos para coordinar el pago con descuento de noviembre ($32.500) vía WhatsApp.</p>
+            <form id="purchaseForm" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label for="nombre">Nombre y Apellido</label>
+                    <input type="text" id="nombre" required placeholder="Tu nombre completo">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" required placeholder="tu@correo.com">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono / WhatsApp</label>
+                    <input type="tel" id="telefono" required placeholder="Ej: 2975810638">
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido por WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactivo -->
+    <script>
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const body = item.querySelector('.accordion-body');
+            
+            // Cerrar los demás
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.accordion-body').style.maxHeight = null;
+                }
+            });
+
+            // Alternar actual
+            item.classList.toggle('active');
+            if (item.classList.contains('active')) {
+                body.style.maxHeight = body.scrollHeight + "px";
+            } else {
+                body.style.maxHeight = null;
+            }
+        }
+
+        function openModal() {
+            document.getElementById('checkoutModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('checkoutModal').classList.remove('active');
+        }
+
+        function submitOrder(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+
+            const mensaje = `Hola! Quiero comprar el Manual de Organización de Eventos Profesional con el descuento de noviembre ($32.500).\n\n*Mis datos:*\n- Nombre: ${nombre}\n- Email: ${email}\n- Teléfono: ${telefono}`;
+            const url = `https://wa.me/5492975810638?text=${encodeURIComponent(mensaje)}`;
+            
+            window.open(url, '_blank');
+            closeModal();
+        }
+
+        // Cerrar modal al hacer clic fuera
+        window.onclick = function(event) {
+            const modal = document.getElementById('checkoutModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
